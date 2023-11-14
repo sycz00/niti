@@ -47,6 +47,7 @@ If you want to to check detailed training information, run:
 
 ## Notes
 Current implementation utilizes cuBLAS and CUTLASS to run int8 matrix multiply and convolution operations directly on tensor cores.
+###### cuBLAS is essentially non open source, code is unavailable and no documentation (internal processes) and is therefore hard to understand and not really possible to modify. Whereas CUTLASS is a well-documented version while cuBLAS is based on some CUTLASS code, it is highly recommended to start learning CUTLASS since is a solid basis for understanding the algorithms etc.
 
 ## Some key codes
 ### ti_torch.py
