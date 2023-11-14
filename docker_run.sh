@@ -1,5 +1,5 @@
 #!/bin/sh
-NITI_PATH="/media/ssd512g4/maolin/niti"
+NITI_PATH="/media/fa/Shared_Files/Fraunhofer/niti"
 GPU=0
 docker build -t wangmaolin/niti:0.1 .
 
