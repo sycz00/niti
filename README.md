@@ -1,5 +1,5 @@
 # Neural networks Training and Inference using Integer-only arithmetic
-
+# Modified Version
 ## Update(Nov 2021)
 I've made some improvments recently:
 - Pure int8 training has no accuracy degradation on CIFAR10 comparing with fp32 now.
