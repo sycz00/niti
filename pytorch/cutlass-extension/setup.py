@@ -4,10 +4,10 @@ from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 setup(
     name='cutlassconv',
     ext_modules=[
-        CUDAExtension('cutlassconv_cuda',
-                      ['cutlassconv.cpp',
+        CUDAExtension(name='cutlassconv_cuda',
+                      sources=['cutlassconv.cpp',
                        'cutlassconv_kernel.cu',],
-                      include_dirs=['/niti/pytorch/cutlass-extension/include','/niti/pytorch/cutlass-extension/util/include'])],
+                      include_dirs=['/media/fa/Shared_Files/Fraunhofer/niti/pytorch/cutlass-extension/include','/media/fa/Shared_Files/Fraunhofer/niti/pytorch/cutlass-extension/util/include'])],
     cmdclass={
         'build_ext': BuildExtension
     })

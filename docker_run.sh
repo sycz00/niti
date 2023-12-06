@@ -12,4 +12,4 @@ docker build -t wangmaolin/niti:0.1 .
 #   <-------host------->:<--------container------->
 #--interactive	-i		Keep STDIN open even if not attached
 #--tty	-t		Allocate a pseudo-TTY
-docker run --shm-size=2g --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=$GPU -v $NITI_PATH:/niti -it wangmaolin/niti:0.1
+docker run --shm-size=2g --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=$GPU -v $NITI_PATH:/niti -it wangmaolin/niti:0.1 -p 5678:5678

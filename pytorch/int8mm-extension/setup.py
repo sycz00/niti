@@ -8,7 +8,7 @@ setup(
                       ['int8mm.cpp',
                        'int8mm_kernel.cu',],
                       library_dirs=['/usr/lib/x86_64-linux-gnu'],
-                      include_dirs=['/niti/pytorch/Common'],
+                      include_dirs=['/media/fa/Shared_Files/Fraunhofer/niti/pytorch/Common'],
                       libraries=['cublas'])
     ],
     cmdclass={

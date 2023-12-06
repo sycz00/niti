@@ -1,5 +1,22 @@
 # Neural networks Training and Inference using Integer-only arithmetic
 # Modified Version
+## Installation
+  - create conda envrionment and install packages via pip (pip install bokeh tensorboard pandas jupyterlab scikit-learn numpy==1.20.3)
+  - install cuda toolkit -> if nessesary, link to in .bashrc /etc/local/cuda-11.1/
+  - the setup.py files in niti/pytorch/cutlass-extension etc have been updates to absolute path (different to local path due to docker container)
+  - Download cuDNN v8.0.5 (November 9th, 2020), for CUDA 11.1 [cuDNN Library for Linux (x86_64)]
+  This version is exactly used in Docker-container image pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel for cuDNN and other version throw NaN error or core dumped. [link](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.0.5/11.1_20201106/cudnn-11.1-linux-x64-v8.0.5.39.tgz)
+  -After cuDNN download do following steps:
+    1. extract content e.g. via tar -xzvf cudnn-11.0-linux-....
+    2. sudo cp cuda/include/cudnn*.h /usr/local/cuda-11.1/include
+    3. sudo cp cuda/lib64/libcudnn* /usr/local/cuda-11.1/lib64
+    4. sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda-11.1/lib64/libcudnn*
+    - Now cuDNN is linked into nvcc location and headers such as <cudnn.h> can be found
+  - conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
+  - run make in main niti folder. and you should be able to execute the project without any docker container.
+
+
+
 ## Update(Nov 2021)
 I've made some improvments recently:
 - Pure int8 training has no accuracy degradation on CIFAR10 comparing with fp32 now.

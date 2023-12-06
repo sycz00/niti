@@ -4,6 +4,7 @@
 # if you want to use RTX 3090, please use the following pytorch version
 FROM pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel
 
-RUN pip install bokeh tensorboard pandas jupyterlab scikit-learn numpy==1.20.3
+RUN pip install bokeh tensorboard pandas jupyterlab scikit-learn numpy==1.20.3 
 WORKDIR /niti
 CMD /bin/bash
+

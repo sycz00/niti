@@ -19,6 +19,9 @@ def main():
         args.save = 'test' 
     save_path = os.path.join('./results/', args.save)
 
+    """
+    #RemoVed by FaBi
+    
     if os.path.exists(save_path) and args.save =='test':
         print("remove previous test dir")
         shutil.rmtree(save_path)
@@ -27,7 +30,7 @@ def main():
         sys.exit(0)
     else:
         os.makedirs(save_path)
-
+    """
     writer_path = os.path.join(save_path,'runs/vgg'+str(args.depth))
     logging.info("writing weight histogram to %s", writer_path)
     if os.path.exists(writer_path) and os.path.isdir(writer_path):

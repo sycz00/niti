@@ -15,11 +15,15 @@ class TiNet(Module):
         self.loss = TiLoss()
 
     def forward(self, x):
+        #print("x-input",x.size())
+        #print("x-input",x[0,:,0,0])
         x_data, x_exp = TiFloatToInt8(x)
+        #print("x-data",x_data[0,:,0,0])
         x_data = x_data.permute(0,2,3,1).contiguous()
         x = x_data, x_exp
         self.out, self.out_exp = self.forward_layers(x)
         self.out_bits = RangeEstimate(self.out)
+        #print("bits_needen:",self.out_bits)
         return self.out, self.out_exp
 
     def backward(self, target):
