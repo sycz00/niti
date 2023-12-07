@@ -10,6 +10,7 @@ setup(
                       library_dirs=['/usr/lib/x86_64-linux-gnu'],
                       libraries=['cudnn'])
     ],
+    extra_compile_args={'cxx': ['-g'], 'nvcc': ['-O2']},
     cmdclass={
         'build_ext': BuildExtension
     })

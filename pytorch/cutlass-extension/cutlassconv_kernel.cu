@@ -4,6 +4,7 @@
 #include <vector>
 #include <utility>
 
+
 #include "cutlass/cutlass.h"
 #include "cutlass/tensor_ref.h"
 
@@ -40,6 +41,9 @@ torch::Tensor tensor_core_sp_conv_optimized(
         torch::Tensor& weight,
         int32_t stride_h,
         int32_t padding_h){
+
+    // printf("\n Test Output printing in the cuda file .... \n"); //it works and prints things on command line, just drawback: re-compile it.. using "python setup.py install"
+
     // The code section below describes datatype for input, output tensors and computation between
     // elements
     using ElementAccumulator = int32_t;                 // Data type of accumulator

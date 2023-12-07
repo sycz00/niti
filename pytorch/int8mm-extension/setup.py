@@ -11,6 +11,8 @@ setup(
                       include_dirs=['/media/fa/Shared_Files/Fraunhofer/niti/pytorch/Common'],
                       libraries=['cublas'])
     ],
+    #used for letting the cuda and cpp code being debuggable by vsCode (or any other debugger)
+    extra_compile_args={'cxx': ['-g'], 'nvcc': ['-O2']},
     cmdclass={
         'build_ext': BuildExtension
     })

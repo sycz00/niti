@@ -8,6 +8,8 @@ setup(
                       sources=['cutlassconv.cpp',
                        'cutlassconv_kernel.cu',],
                       include_dirs=['/media/fa/Shared_Files/Fraunhofer/niti/pytorch/cutlass-extension/include','/media/fa/Shared_Files/Fraunhofer/niti/pytorch/cutlass-extension/util/include'])],
+                      #used for letting the cuda and cpp code being debuggable by vsCode (or any other debugger)
+                      extra_compile_args={'cxx': ['-g'], 'nvcc': ['-O2']},
     cmdclass={
         'build_ext': BuildExtension
     })
